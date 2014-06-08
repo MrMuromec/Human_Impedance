@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace HumanImpedance.Common
 {
-    class CMeasure
+    public class CMeasure
     {
+      public int id;
+      public double Current;
+      public double Voltage;
+      public CMeasure()
+      {
+        id = 0;
+        Current = 0;
+        Voltage = 0;
+      }
     }
 }
