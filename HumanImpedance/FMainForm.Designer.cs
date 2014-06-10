@@ -39,7 +39,7 @@
       // 
       // OpenFileButton
       // 
-      this.OpenFileButton.Location = new System.Drawing.Point(495, 41);
+      this.OpenFileButton.Location = new System.Drawing.Point(527, 41);
       this.OpenFileButton.Name = "OpenFileButton";
       this.OpenFileButton.Size = new System.Drawing.Size(75, 23);
       this.OpenFileButton.TabIndex = 0;
@@ -69,14 +69,14 @@
       this.PlotPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.PlotPanel.Location = new System.Drawing.Point(15, 108);
       this.PlotPanel.Name = "PlotPanel";
-      this.PlotPanel.Size = new System.Drawing.Size(666, 294);
+      this.PlotPanel.Size = new System.Drawing.Size(682, 340);
       this.PlotPanel.TabIndex = 3;
       this.PlotPanel.TabStop = false;
       this.PlotPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PlotPanel_Paint);
       // 
       // ReadFileButton
       // 
-      this.ReadFileButton.Location = new System.Drawing.Point(606, 40);
+      this.ReadFileButton.Location = new System.Drawing.Point(622, 41);
       this.ReadFileButton.Name = "ReadFileButton";
       this.ReadFileButton.Size = new System.Drawing.Size(75, 23);
       this.ReadFileButton.TabIndex = 4;
@@ -98,7 +98,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(693, 414);
+      this.ClientSize = new System.Drawing.Size(709, 460);
       this.Controls.Add(this.ApplyFilter);
       this.Controls.Add(this.ReadFileButton);
       this.Controls.Add(this.PlotPanel);

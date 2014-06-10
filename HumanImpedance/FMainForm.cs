@@ -162,12 +162,13 @@ namespace HumanImpedance
       }
 
       /*****************Фильры кончились*****************/
+      /*
       MeasureList.Clear();
       for (int i = 0; i < measure3.Count; i++)
       {
         MeasureList.Add(measure3[i]);
       }
-
+      */
       double MaxVoltage = 1, MaxCurrent = 1;
       foreach (CMeasure measure in MeasureList)
       {
@@ -178,10 +179,10 @@ namespace HumanImpedance
       {
         measure.Voltage /= MaxVoltage;
         measure.Current /= MaxCurrent;
-        measure.Voltage *= 50;
-        measure.Current *= 50;
-        measure.Voltage += 150;
-        measure.Current += 150;
+        measure.Voltage *= 150;
+        measure.Current *= 150;
+        measure.Voltage += 170;
+        measure.Current += 170;
       }
       PlotPanel.Refresh();
     }
@@ -207,15 +208,15 @@ namespace HumanImpedance
       {
         e.Graphics.DrawLine(
           pen_1, 
-          (float)i / 5, 
+          (float)i / 3, 
           (float)MeasureList[i - 1].Current, 
-          (float)(i + 1) / 5, 
+          (float)(i + 1) / 3, 
           (float)MeasureList[i].Current);
         e.Graphics.DrawLine(
          pen_2, 
-         (float)i / 5,
+         (float)i / 3,
          (float)MeasureList[i - 1].Voltage,
-         (float)(i + 1) / 5,
+         (float)(i + 1) / 3,
          (float)MeasureList[i].Voltage);
       }
     }
