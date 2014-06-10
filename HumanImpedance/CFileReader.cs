@@ -36,7 +36,6 @@ namespace HumanImpedance
             double.TryParse(lineelemets[1], out Measure.Current);
             double.TryParse(lineelemets[2], out Measure.Voltage);
 
-            Measure.id = Count;
             Count++;
 
             outlist.Add(Measure);

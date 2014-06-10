@@ -8,12 +8,10 @@ namespace HumanImpedance.Common
 {
     public class CMeasure
     {
-      public int id;
       public double Current;
       public double Voltage;
       public CMeasure()
       {
-        id = 0;
         Current = 0;
         Voltage = 0;
       }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using HumanImpedance.Common;
 
+
 namespace HumanImpedance
 {
   public partial class FMainForm : Form
@@ -48,17 +49,151 @@ namespace HumanImpedance
       }
       CFileReader fileReader = new CFileReader(PathBox.Text);
       MeasureList = fileReader.GetMeasure();
+
+      List<CMeasure> measure2 = new List<CMeasure>();
+      List<CMeasure> measure3 = new List<CMeasure>();
+      
+
+      double Voltage, Current;
+
+
+      measure2.Add(new CMeasure());
+      measure2.Add(new CMeasure());
+      for (int i = 0; i < MeasureList.Count; i++)
+      {
+        measure2.Add(MeasureList[i]);
+      }
+
+      /*****************Начало фильтров*****************/
+
+      measure3.Clear();
+      measure3.Add(new CMeasure());
+      measure3.Add(new CMeasure());
+      for (int i = 2; i < measure2.Count; i++)
+      {
+        /***************************первый фильтр*******************************/
+        CMeasure measureHelp = new CMeasure();
+
+        Voltage = (1 * measure2[i - 2].Voltage - 1.987017507943311 * measure2[i - 1].Voltage + 1 * measure2[i].Voltage);
+        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.9750682177514072 * measure3[i - 1].Voltage) ) / 0.98258050109889983;
+        measureHelp.Voltage = Voltage;
+
+        Current = (1 * measure2[i - 2].Current - 1.987017507943311 * measure2[i - 1].Current + 1 * measure2[i].Current);
+        Current = (Current - (1 * measure3[i - 2].Current - 1.9750682177514072 * measure3[i - 1].Current) ) / 0.98258050109889983;
+        measureHelp.Current = Current;
+
+        measure3.Add(measureHelp);
+      }
+
+      measure2.Clear();
+      measure2.Add(new CMeasure());
+      measure2.Add(new CMeasure());
+      for (int i = 2; i < measure3.Count; i++)
+      {
+        /***************************второй фильтр*******************************/
+        CMeasure measureHelp = new CMeasure();
+
+        Voltage = (1 * measure3[i - 2].Voltage - 1.9840590655040431 * measure3[i - 1].Voltage + 1 * measure3[i].Voltage);
+        Voltage = (Voltage - (1 * measure2[i - 2].Voltage - 1.9361338515598192 * measure2[i - 1].Voltage) ) / 0.94439658006587768 ;
+        measureHelp.Voltage = Voltage;
+
+        Current = (1 * measure3[i - 2].Current - 1.9840590655040431 * measure3[i - 1].Current + 1 * measure3[i].Current);
+        Current = (Current - (1 * measure2[i - 2].Current - 1.9361338515598192 * measure2[i - 1].Current) ) / 0.94439658006587768 ;
+        measureHelp.Current = Current;
+
+        measure2.Add(measureHelp);
+      }
+
+      measure3.Clear();
+      measure3.Add(new CMeasure());
+      measure3.Add(new CMeasure());
+      for (int i = 2; i < measure2.Count; i++)
+      {
+        /***************************Третий фильтр*******************************/
+        CMeasure measureHelp = new CMeasure();
+
+        Voltage = (1 * measure2[i - 2].Voltage - 1.974748370271302 * measure2[i - 1].Voltage + 1 * measure2[i].Voltage);
+        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.8849234060305617 * measure3[i - 1].Voltage) ) / 0.89494634126434935;
+        measureHelp.Voltage = Voltage;
+
+        Current = (1 * measure2[i - 2].Current - 1.974748370271302 * measure2[i - 1].Current + 1 * measure2[i].Current);
+        Current = (Current - (1 * measure3[i - 2].Current - 1.8849234060305617 * measure3[i - 1].Current) ) / 0.89494634126434935;
+        measureHelp.Current = Current;
+
+        measure3.Add(measureHelp);
+      }
+
+      measure2.Clear();
+      measure2.Add(new CMeasure());
+      measure2.Add(new CMeasure());
+      for (int i = 2; i < measure3.Count; i++)
+      {
+        /*************************** Четвёртый фильтр*******************************/
+        CMeasure measureHelp = new CMeasure();
+
+        Voltage = (1 * measure3[i - 2].Voltage - 1.939288077029953 * measure3[i - 1].Voltage + 1 * measure3[i].Voltage);
+        Voltage = (Voltage - (1 * measure2[i - 2].Voltage - 1.8178651053118702 * measure2[i - 1].Voltage) ) / 0.83068496809113224;
+        measureHelp.Voltage = Voltage;
+
+        Current = (1 * measure3[i - 2].Current - 1.939288077029953 * measure3[i - 1].Current + 1 * measure3[i].Current);
+        Current = (Current - (1 * measure2[i - 2].Current - 1.8178651053118702 * measure2[i - 1].Current) ) / 0.83068496809113224;
+        measureHelp.Current = Current;
+
+        measure2.Add(measureHelp);
+      }
+
+      measure3.Clear();
+      measure3.Add(new CMeasure());
+      measure3.Add(new CMeasure());
+      for (int i = 2; i < measure2.Count; i++)
+      {
+        /***************************Пятый фильтр*******************************/
+        CMeasure measureHelp = new CMeasure();
+
+        Voltage = (1 * measure2[i - 2].Voltage - 1.5404400822203277 * measure2[i - 1].Voltage + 1 * measure2[i].Voltage);
+        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.7572328263428469 * measure3[i - 1].Voltage) ) / 0.77275468602988517;
+        measureHelp.Voltage = Voltage;
+
+        Current = (1 * measure2[i - 2].Current - 1.5404400822203277 * measure2[i - 1].Current + 1 * measure2[i].Current);
+        Current = (Current - (1 * measure3[i - 2].Current - 1.7572328263428469 * measure3[i - 1].Current) ) / 0.77275468602988517;
+        measureHelp.Current = Current;
+
+        measure3.Add(measureHelp);
+      }
+
+      /*****************Фильры кончились*****************/
+      MeasureList.Clear();
+      for (int i = 0; i < measure3.Count; i++)
+      {
+        MeasureList.Add(measure3[i]);
+      }
+
+      double MaxVoltage = 1, MaxCurrent = 1;
+      foreach (CMeasure measure in MeasureList)
+      {
+        if (Math.Abs(measure.Voltage) > MaxVoltage) MaxVoltage = Math.Abs(measure.Voltage);
+        if (Math.Abs(measure.Current) > MaxCurrent) MaxCurrent = Math.Abs(measure.Current);
+      }
+      foreach (CMeasure measure in MeasureList)
+      {
+        measure.Voltage /= MaxVoltage;
+        measure.Current /= MaxCurrent;
+        measure.Voltage *= 50;
+        measure.Current *= 50;
+        measure.Voltage += 150;
+        measure.Current += 150;
+      }
       PlotPanel.Refresh();
     }
 
     private void ApplyFilter_Click(object sender, EventArgs e)
-    {
+    {/*
       foreach (CMeasure measure in MeasureList)
       {
         measure.Voltage /= 1000;
         measure.Current /= 1000;
         measure.Current += 200;
-      }
+      }*/
       PlotPanel.Refresh();
     }
 
@@ -71,14 +206,16 @@ namespace HumanImpedance
       for (int i = 1; i < MeasureList.Count; i++)
       {
         e.Graphics.DrawLine(
-          pen_1, (float)i / 10, 
+          pen_1, 
+          (float)i / 5, 
           (float)MeasureList[i - 1].Current, 
-          (float)(i + 1) / 10, 
+          (float)(i + 1) / 5, 
           (float)MeasureList[i].Current);
         e.Graphics.DrawLine(
-         pen_2, (float)i / 10,
+         pen_2, 
+         (float)i / 5,
          (float)MeasureList[i - 1].Voltage,
-         (float)(i + 1) / 10,
+         (float)(i + 1) / 5,
          (float)MeasureList[i].Voltage);
       }
     }
