@@ -74,12 +74,12 @@ namespace HumanImpedance
         /***************************первый фильтр*******************************/
         CMeasure measureHelp = new CMeasure();
 
-        Voltage = (1 * measure2[i - 2].Voltage - 1.987017507943311 * measure2[i - 1].Voltage + 1 * measure2[i].Voltage);
-        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.9750682177514072 * measure3[i - 1].Voltage) ) / 0.98258050109889983;
+        Voltage = (1 * measure2[i - 2].Voltage - 1.9750682177514072 * measure2[i - 1].Voltage + 0.98258050109889983 * measure2[i].Voltage);
+        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.987017507943311 * measure3[i - 1].Voltage)) / 1;
         measureHelp.Voltage = Voltage;
 
-        Current = (1 * measure2[i - 2].Current - 1.987017507943311 * measure2[i - 1].Current + 1 * measure2[i].Current);
-        Current = (Current - (1 * measure3[i - 2].Current - 1.9750682177514072 * measure3[i - 1].Current) ) / 0.98258050109889983;
+        Current = (1 * measure2[i - 2].Current - 1.9750682177514072 * measure2[i - 1].Current + 0.98258050109889983 * measure2[i].Current);
+        Current = (Current - (1 * measure3[i - 2].Current - 1.987017507943311 * measure3[i - 1].Current)) / 1;
         measureHelp.Current = Current;
 
         measure3.Add(measureHelp);
@@ -93,12 +93,12 @@ namespace HumanImpedance
         /***************************второй фильтр*******************************/
         CMeasure measureHelp = new CMeasure();
 
-        Voltage = (1 * measure3[i - 2].Voltage - 1.9840590655040431 * measure3[i - 1].Voltage + 1 * measure3[i].Voltage);
-        Voltage = (Voltage - (1 * measure2[i - 2].Voltage - 1.9361338515598192 * measure2[i - 1].Voltage) ) / 0.94439658006587768 ;
+        Voltage = (1 * measure3[i - 2].Voltage - 1.9361338515598192 * measure3[i - 1].Voltage + 0.94439658006587768 * measure3[i].Voltage);
+        Voltage = (Voltage - (1 * measure2[i - 2].Voltage - 1.9840590655040431 * measure2[i - 1].Voltage)) / 1;
         measureHelp.Voltage = Voltage;
 
-        Current = (1 * measure3[i - 2].Current - 1.9840590655040431 * measure3[i - 1].Current + 1 * measure3[i].Current);
-        Current = (Current - (1 * measure2[i - 2].Current - 1.9361338515598192 * measure2[i - 1].Current) ) / 0.94439658006587768 ;
+        Current = (1 * measure3[i - 2].Current - 1.9361338515598192 * measure3[i - 1].Current + 0.94439658006587768 * measure3[i].Current);
+        Current = (Current - (1 * measure2[i - 2].Current - 1.9840590655040431 * measure2[i - 1].Current)) / 1;
         measureHelp.Current = Current;
 
         measure2.Add(measureHelp);
@@ -112,12 +112,12 @@ namespace HumanImpedance
         /***************************Третий фильтр*******************************/
         CMeasure measureHelp = new CMeasure();
 
-        Voltage = (1 * measure2[i - 2].Voltage - 1.974748370271302 * measure2[i - 1].Voltage + 1 * measure2[i].Voltage);
-        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.8849234060305617 * measure3[i - 1].Voltage) ) / 0.89494634126434935;
+        Voltage = (1 * measure2[i - 2].Voltage - 1.8849234060305617 * measure2[i - 1].Voltage + 0.89494634126434935 * measure2[i].Voltage);
+        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.974748370271302 * measure3[i - 1].Voltage)) / 1;
         measureHelp.Voltage = Voltage;
 
-        Current = (1 * measure2[i - 2].Current - 1.974748370271302 * measure2[i - 1].Current + 1 * measure2[i].Current);
-        Current = (Current - (1 * measure3[i - 2].Current - 1.8849234060305617 * measure3[i - 1].Current) ) / 0.89494634126434935;
+        Current = (1 * measure2[i - 2].Current - 1.8849234060305617 * measure2[i - 1].Current + 0.89494634126434935 * measure2[i].Current);
+        Current = (Current - (1 * measure3[i - 2].Current - 1.974748370271302 * measure3[i - 1].Current)) / 1;
         measureHelp.Current = Current;
 
         measure3.Add(measureHelp);
@@ -131,12 +131,12 @@ namespace HumanImpedance
         /*************************** Четвёртый фильтр*******************************/
         CMeasure measureHelp = new CMeasure();
 
-        Voltage = (1 * measure3[i - 2].Voltage - 1.939288077029953 * measure3[i - 1].Voltage + 1 * measure3[i].Voltage);
-        Voltage = (Voltage - (1 * measure2[i - 2].Voltage - 1.8178651053118702 * measure2[i - 1].Voltage) ) / 0.83068496809113224;
+        Voltage = (1 * measure3[i - 2].Voltage - 1.8178651053118702 * measure3[i - 1].Voltage + 0.83068496809113224 * measure3[i].Voltage);
+        Voltage = (Voltage - (1 * measure2[i - 2].Voltage - 1.939288077029953 * measure2[i - 1].Voltage)) / 1;
         measureHelp.Voltage = Voltage;
 
-        Current = (1 * measure3[i - 2].Current - 1.939288077029953 * measure3[i - 1].Current + 1 * measure3[i].Current);
-        Current = (Current - (1 * measure2[i - 2].Current - 1.8178651053118702 * measure2[i - 1].Current) ) / 0.83068496809113224;
+        Current = (1 * measure3[i - 2].Current - 1.8178651053118702 * measure3[i - 1].Current + 0.83068496809113224 * measure3[i].Current);
+        Current = (Current - (1 * measure2[i - 2].Current - 1.939288077029953 * measure2[i - 1].Current)) / 1;
         measureHelp.Current = Current;
 
         measure2.Add(measureHelp);
@@ -150,12 +150,12 @@ namespace HumanImpedance
         /***************************Пятый фильтр*******************************/
         CMeasure measureHelp = new CMeasure();
 
-        Voltage = (1 * measure2[i - 2].Voltage - 1.5404400822203277 * measure2[i - 1].Voltage + 1 * measure2[i].Voltage);
-        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.7572328263428469 * measure3[i - 1].Voltage) ) / 0.77275468602988517;
+        Voltage = (1 * measure2[i - 2].Voltage - 1.7572328263428469 * measure2[i - 1].Voltage + 0.77275468602988517 * measure2[i].Voltage);
+        Voltage = (Voltage - (1 * measure3[i - 2].Voltage - 1.5404400822203277 * measure3[i - 1].Voltage)) / 1;
         measureHelp.Voltage = Voltage;
 
-        Current = (1 * measure2[i - 2].Current - 1.5404400822203277 * measure2[i - 1].Current + 1 * measure2[i].Current);
-        Current = (Current - (1 * measure3[i - 2].Current - 1.7572328263428469 * measure3[i - 1].Current) ) / 0.77275468602988517;
+        Current = (1 * measure2[i - 2].Current - 1.7572328263428469 * measure2[i - 1].Current + 0.77275468602988517 * measure2[i].Current);
+        Current = (Current - (1 * measure3[i - 2].Current - 1.5404400822203277 * measure3[i - 1].Current)) / 1;
         measureHelp.Current = Current;
 
         measure3.Add(measureHelp);
