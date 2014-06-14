@@ -16,7 +16,7 @@ namespace HumanImpedance
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMainForm());
+            Application.Run(new FContainer());
         }
     }
 }

@@ -46,16 +46,34 @@
   <ItemGroup>
     <Compile Include="CFileReader.cs" />
     <Compile Include="Common\CMeasure.cs" />
-    <Compile Include="FMainForm.cs">
+    <Compile Include="Common\FExportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMainForm.Designer.cs">
-      <DependentUpon>FMainForm.cs</DependentUpon>
+    <Compile Include="Common\FExportForm.Designer.cs">
+      <DependentUpon>FExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FContainer.Designer.cs">
+      <DependentUpon>FContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCreateFromFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCreateFromFile.Designer.cs">
+      <DependentUpon>FCreateFromFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FMainForm.resx">
-      <DependentUpon>FMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Common\FExportForm.resx">
+      <DependentUpon>FExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FContainer.resx">
+      <DependentUpon>FContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCreateFromFile.resx">
+      <DependentUpon>FCreateFromFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

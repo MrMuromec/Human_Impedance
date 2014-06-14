@@ -1,6 +1,6 @@
 ﻿namespace HumanImpedance
 {
-    partial class FMainForm
+    partial class FCreateFromFile
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -33,13 +33,12 @@
       this.PathBox = new System.Windows.Forms.TextBox();
       this.PlotPanel = new System.Windows.Forms.PictureBox();
       this.ReadFileButton = new System.Windows.Forms.Button();
-      this.ApplyFilter = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.PlotPanel)).BeginInit();
       this.SuspendLayout();
       // 
       // OpenFileButton
       // 
-      this.OpenFileButton.Location = new System.Drawing.Point(527, 41);
+      this.OpenFileButton.Location = new System.Drawing.Point(522, 59);
       this.OpenFileButton.Name = "OpenFileButton";
       this.OpenFileButton.Size = new System.Drawing.Size(75, 23);
       this.OpenFileButton.TabIndex = 0;
@@ -50,7 +49,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(12, 46);
+      this.label1.Location = new System.Drawing.Point(12, 64);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(74, 13);
       this.label1.TabIndex = 1;
@@ -58,7 +57,7 @@
       // 
       // PathBox
       // 
-      this.PathBox.Location = new System.Drawing.Point(92, 43);
+      this.PathBox.Location = new System.Drawing.Point(92, 61);
       this.PathBox.Name = "PathBox";
       this.PathBox.Size = new System.Drawing.Size(397, 20);
       this.PathBox.TabIndex = 2;
@@ -76,7 +75,7 @@
       // 
       // ReadFileButton
       // 
-      this.ReadFileButton.Location = new System.Drawing.Point(622, 41);
+      this.ReadFileButton.Location = new System.Drawing.Point(617, 59);
       this.ReadFileButton.Name = "ReadFileButton";
       this.ReadFileButton.Size = new System.Drawing.Size(75, 23);
       this.ReadFileButton.TabIndex = 4;
@@ -84,29 +83,18 @@
       this.ReadFileButton.UseVisualStyleBackColor = true;
       this.ReadFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
       // 
-      // ApplyFilter
-      // 
-      this.ApplyFilter.Location = new System.Drawing.Point(15, 79);
-      this.ApplyFilter.Name = "ApplyFilter";
-      this.ApplyFilter.Size = new System.Drawing.Size(94, 23);
-      this.ApplyFilter.TabIndex = 0;
-      this.ApplyFilter.Text = "Отфилтровать";
-      this.ApplyFilter.UseVisualStyleBackColor = true;
-      this.ApplyFilter.Click += new System.EventHandler(this.ApplyFilter_Click);
-      // 
       // FMainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(709, 460);
-      this.Controls.Add(this.ApplyFilter);
       this.Controls.Add(this.ReadFileButton);
       this.Controls.Add(this.PlotPanel);
       this.Controls.Add(this.PathBox);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.OpenFileButton);
       this.Name = "FMainForm";
-      this.Text = "Form1";
+      this.Text = "Human Impedance";
       ((System.ComponentModel.ISupportInitialize)(this.PlotPanel)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -120,7 +108,6 @@
         private System.Windows.Forms.TextBox PathBox;
         private System.Windows.Forms.PictureBox PlotPanel;
         private System.Windows.Forms.Button ReadFileButton;
-        private System.Windows.Forms.Button ApplyFilter;
     }
 }
 
