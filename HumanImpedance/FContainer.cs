@@ -114,5 +114,17 @@ namespace HumanImpedance
       createPac.ShowDialog();
       currentDatabase.AddPacient(createPac.pacient);
     }
+
+    private void пациентыToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      FShowPacients showPacs = new FShowPacients(this);
+      showPacs.Show();
+    }
+
+    private void новоеToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      FCreateFromFile createMeasure = new FCreateFromFile();
+      createMeasure.ShowDialog();
+    }
   }
 }

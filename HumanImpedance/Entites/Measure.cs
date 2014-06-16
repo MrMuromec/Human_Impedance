@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HumanImpedance.Common;
 namespace HumanImpedance.Entites
 {
   [Serializable]
@@ -16,8 +16,11 @@ namespace HumanImpedance.Entites
 
     public string FIO;
     public DateTime date;
-    public List<double> Voltage;
-    public List<double> Current;
+    public List<CMeasure> MeasureList;
+    public Measure()
+    {
+      MeasureList = new List<CMeasure>();
+    }
 
   }
 }

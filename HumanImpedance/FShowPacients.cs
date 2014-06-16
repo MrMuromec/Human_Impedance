@@ -18,14 +18,16 @@ namespace HumanImpedance
 
     public FShowPacients(FContainer parent)
     {
+      InitializeComponent();
 
       this.MdiParent = parent;
       Parent = parent;
       localDB = parent.currentDatabase;
-      InitializeComponent();
+      GridRefresh();
     }
     private void GridRefresh()
     {
+      PacGrid.Rows.Clear();
       foreach (Pacient pac in localDB.GetPacientList())
       {
         string[] array = new string[2];
@@ -33,6 +35,12 @@ namespace HumanImpedance
         array[1] = (from m in localDB.GetMeasureList() where m.PacID == pac.id select m).Count().ToString(); 
         PacGrid.Rows.Add(array);
       }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      localDB = Parent.currentDatabase;
+      GridRefresh();
     }
   }
 }

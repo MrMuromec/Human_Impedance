@@ -19,6 +19,7 @@ namespace HumanImpedance
     {
       localDB = parent.currentDatabase;
       this.MdiParent = parent;
+      Parent = parent;
       InitializeComponent();
     }
 
@@ -40,6 +41,7 @@ namespace HumanImpedance
     }
     private void GridRefresh()
     {
+      DocGrid.Rows.Clear();
       foreach (Doctor doc in localDB.GetDocList())
       {
         DocGrid.Rows.Add(doc.FIO);

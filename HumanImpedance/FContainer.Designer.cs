@@ -207,6 +207,7 @@
       this.новоеToolStripMenuItem.Name = "новоеToolStripMenuItem";
       this.новоеToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
       this.новоеToolStripMenuItem.Text = "Новое";
+      this.новоеToolStripMenuItem.Click += new System.EventHandler(this.новоеToolStripMenuItem_Click);
       // 
       // открытьИзБазыToolStripMenuItem
       // 
@@ -248,6 +249,7 @@
       this.пациентыToolStripMenuItem.Name = "пациентыToolStripMenuItem";
       this.пациентыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.пациентыToolStripMenuItem.Text = "Пациенты";
+      this.пациентыToolStripMenuItem.Click += new System.EventHandler(this.пациентыToolStripMenuItem_Click);
       // 
       // FContainer
       // 
