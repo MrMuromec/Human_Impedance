@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using HumanImpedance.Common;
-
+using HumanImpedance.Entites;
 
 namespace HumanImpedance
 {
   public partial class FCreateFromFile : Form
   {
 
-    private List<CMeasure> MeasureList;
+    public Measure measure;
 
     public FCreateFromFile()
     {
       InitializeComponent();
+      measure = new Measure();
     }
 
     private void OpenFileButton_Click(object sender, EventArgs e)
@@ -48,9 +49,10 @@ namespace HumanImpedance
         return;
       }
       CFileReader fileReader = new CFileReader(PathBox.Text);
-      MeasureList = fileReader.GetMeasure();
+      measure.MeasureList = fileReader.GetMeasure();
       FilterMeasure();
       PlotPanel.Refresh();
+      SaveButton.Enabled = true;
     }
 
     private void PlotPanel_Paint(object sender, PaintEventArgs e)
@@ -58,21 +60,21 @@ namespace HumanImpedance
       Pen pen_1 = Pens.Green;
       Pen pen_2 = Pens.Blue;
 
-      if(MeasureList == null || MeasureList.Count() < 3) return;
-      for (int i = 1; i < MeasureList.Count; i++)
+      if(measure.MeasureList == null || measure.MeasureList.Count() < 3) return;
+      for (int i = 1; i < measure.MeasureList.Count; i++)
       {
         e.Graphics.DrawLine(
           pen_1, 
           (float)i / 3, 
-          (float)MeasureList[i - 1].Current, 
+          (float)measure.MeasureList[i - 1].Current, 
           (float)(i + 1) / 3, 
-          (float)MeasureList[i].Current);
+          (float)measure.MeasureList[i].Current);
         e.Graphics.DrawLine(
          pen_2, 
          (float)i / 3,
-         (float)MeasureList[i - 1].Voltage,
+         (float)measure.MeasureList[i - 1].Voltage,
          (float)(i + 1) / 3,
-         (float)MeasureList[i].Voltage);
+         (float)measure.MeasureList[i].Voltage);
       }
     }
 
@@ -94,9 +96,9 @@ namespace HumanImpedance
 
       measure2.Add(new CMeasure());
       measure2.Add(new CMeasure());
-      for (int i = 0; i < MeasureList.Count; i++)
+      for (int i = 0; i < measure.MeasureList.Count; i++)
       {
-        measure2.Add(MeasureList[i]);
+        measure2.Add(measure.MeasureList[i]);
       }
       measure3.Clear();
       measure3.Add(new CMeasure());
@@ -195,27 +197,32 @@ namespace HumanImpedance
 
       /*****************Фильры кончились*****************/
 
-      MeasureList.Clear();
+      measure.MeasureList.Clear();
       for (int i = 0; i < measure3.Count; i++)
       {
-        MeasureList.Add(measure3[i]);
+        measure.MeasureList.Add(measure3[i]);
       }
 
       double MaxVoltage = 1, MaxCurrent = 1;
-      foreach (CMeasure measure in MeasureList)
+      foreach (CMeasure _measure in measure.MeasureList)
       {
-        if (Math.Abs(measure.Voltage) > MaxVoltage) MaxVoltage = Math.Abs(measure.Voltage);
-        if (Math.Abs(measure.Current) > MaxCurrent) MaxCurrent = Math.Abs(measure.Current);
+        if (Math.Abs(_measure.Voltage) > MaxVoltage) MaxVoltage = Math.Abs(_measure.Voltage);
+        if (Math.Abs(_measure.Current) > MaxCurrent) MaxCurrent = Math.Abs(_measure.Current);
       }
-      foreach (CMeasure measure in MeasureList)
+      foreach (CMeasure _measure in measure.MeasureList)
       {
-        measure.Voltage /= MaxVoltage;
-        measure.Current /= MaxCurrent;
-        measure.Voltage *= 150;
-        measure.Current *= 150;
-        measure.Voltage += 170;
-        measure.Current += 170;
+        _measure.Voltage /= MaxVoltage;
+        _measure.Current /= MaxCurrent;
+        _measure.Voltage *= 150;
+        _measure.Current *= 150;
+        _measure.Voltage += 170;
+        _measure.Current += 170;
       }
+    }
+
+    private void SaveButton_Click(object sender, EventArgs e)
+    {
+      this.Close();
     }
   }
 }

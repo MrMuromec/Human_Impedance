@@ -86,13 +86,14 @@
       // 
       // SaveButton
       // 
+      this.SaveButton.Enabled = false;
       this.SaveButton.Location = new System.Drawing.Point(645, 59);
       this.SaveButton.Name = "SaveButton";
       this.SaveButton.Size = new System.Drawing.Size(75, 23);
       this.SaveButton.TabIndex = 4;
       this.SaveButton.Text = "Сохранить";
       this.SaveButton.UseVisualStyleBackColor = true;
-      this.SaveButton.Click += new System.EventHandler(this.ReadFileButton_Click);
+      this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
       // 
       // FCreateFromFile
       // 

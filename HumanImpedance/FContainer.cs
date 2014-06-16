@@ -125,6 +125,7 @@ namespace HumanImpedance
     {
       FCreateFromFile createMeasure = new FCreateFromFile();
       createMeasure.ShowDialog();
+      currentDatabase.AddMeasure(createMeasure.measure);
     }
   }
 }
