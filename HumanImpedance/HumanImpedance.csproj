@@ -44,14 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDataFileInterface.cs" />
     <Compile Include="CFileReader.cs" />
     <Compile Include="Common\CMeasure.cs" />
+    <Compile Include="Common\FCreateDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FCreateDoc.Designer.cs">
+      <DependentUpon>FCreateDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FCreatePacient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FCreatePacient.Designer.cs">
+      <DependentUpon>FCreatePacient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\FExportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Common\FExportForm.Designer.cs">
       <DependentUpon>FExportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entites\DataContainer.cs" />
+    <Compile Include="Entites\Doctor.cs" />
+    <Compile Include="Entites\Measure.cs" />
+    <Compile Include="Entites\Pacient.cs" />
     <Compile Include="FContainer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +81,26 @@
     <Compile Include="FCreateFromFile.Designer.cs">
       <DependentUpon>FCreateFromFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FShowDocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FShowDocs.Designer.cs">
+      <DependentUpon>FShowDocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FShowPacients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FShowPacients.Designer.cs">
+      <DependentUpon>FShowPacients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Common\FCreateDoc.resx">
+      <DependentUpon>FCreateDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FCreatePacient.resx">
+      <DependentUpon>FCreatePacient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\FExportForm.resx">
       <DependentUpon>FExportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FCreateFromFile.resx">
       <DependentUpon>FCreateFromFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FShowDocs.resx">
+      <DependentUpon>FShowDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FShowPacients.resx">
+      <DependentUpon>FShowPacients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
