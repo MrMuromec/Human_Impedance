@@ -13,7 +13,8 @@ namespace HumanImpedance.Entites
     private List<Doctor> Doctors;
     private List<Measure> Measures;
     private List<Pacient> Pacients;
-
+    public int currentDocID;
+    public int currentPacID;
     private int NextFreeDoc;
     private int NextFreeMeasure;
     private int NextFreePac;
@@ -26,7 +27,9 @@ namespace HumanImpedance.Entites
       NextFreeDoc = 0;
       NextFreeMeasure = 0;
       NextFreePac = 0;
+      currentDocID = currentPacID = 0;
     }
+
     #region Add Methods
     public int AddDoc(Doctor doctor)
     {
@@ -50,6 +53,8 @@ namespace HumanImpedance.Entites
       return pacient.id;
     }
     #endregion
+
+    #region Get List Methods 
     public List<Doctor> GetDocList()
     {
       return Doctors;
@@ -62,5 +67,17 @@ namespace HumanImpedance.Entites
     {
       return Pacients;
     }
+    #endregion
+
+    #region Find By FIO Methods
+    public Pacient FindPacient(string FIO)
+    {
+      return (from p in Pacients where p.FIO.Equals(FIO) select p).FirstOrDefault();
+    }
+    public Doctor FindDoctor(string FIO)
+    {
+      return (from d in Doctors where d.FIO.Equals(FIO) select d).FirstOrDefault();
+    }
+    #endregion
   }
 }

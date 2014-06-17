@@ -32,7 +32,7 @@ namespace HumanImpedance
       {
         string[] array = new string[2];
         array[0] = pac.FIO;
-        array[1] = (from m in localDB.GetMeasureList() where m.PacID == pac.id select m).Count().ToString(); 
+        array[1] = (from m in localDB.GetMeasureList() where m.PacID == pac.id select m).Count().ToString();
         PacGrid.Rows.Add(array);
       }
     }
@@ -41,6 +41,25 @@ namespace HumanImpedance
     {
       localDB = Parent.currentDatabase;
       GridRefresh();
+    }
+
+    private void PacGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+      if(!localDB.Equals(Parent.currentDatabase))
+      {
+        Refresh();
+        return;
+      }
+      if (e.RowIndex < 0) return;
+      string FIO = PacGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+      
+
+      MessageBox.Show(FIO);
+    }
+
+    private void PacGrid_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+      MessageBox.Show(PacGrid.Rows[e.RowIndex].Cells[0].ToString());
     }
   }
 }

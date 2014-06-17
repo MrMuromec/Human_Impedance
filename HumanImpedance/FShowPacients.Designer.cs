@@ -49,6 +49,8 @@
       this.PacGrid.ReadOnly = true;
       this.PacGrid.Size = new System.Drawing.Size(644, 366);
       this.PacGrid.TabIndex = 0;
+      this.PacGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PacGrid_CellContentClick);
+      this.PacGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PacGrid_CellContentClick);
       // 
       // PacFIO
       // 
