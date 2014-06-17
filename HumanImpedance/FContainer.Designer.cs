@@ -41,18 +41,17 @@
       this.измерениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.базуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.врачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.пациентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.экспортToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.вТекущуюБазуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.вНовуюБазуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.импортToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.измеренияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.новоеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.открытьИзБазыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.врачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.пациентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.MainMenu.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -114,7 +113,7 @@
       // подкючитьToolStripMenuItem
       // 
       this.подкючитьToolStripMenuItem.Name = "подкючитьToolStripMenuItem";
-      this.подкючитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.подкючитьToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.подкючитьToolStripMenuItem.Text = "Подключить";
       this.подкючитьToolStripMenuItem.Click += new System.EventHandler(this.подкючитьToolStripMenuItem_Click);
       // 
@@ -126,14 +125,14 @@
             this.измерениеToolStripMenuItem,
             this.базуДанныхToolStripMenuItem});
       this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-      this.создатьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.создатьToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.создатьToolStripMenuItem.Text = "Создать";
       this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
       // 
       // пациентаToolStripMenuItem
       // 
       this.пациентаToolStripMenuItem.Name = "пациентаToolStripMenuItem";
-      this.пациентаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.пациентаToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
       this.пациентаToolStripMenuItem.Text = "Пациента";
       this.пациентаToolStripMenuItem.Click += new System.EventHandler(this.пациентаToolStripMenuItem_Click);
       // 
@@ -163,8 +162,22 @@
             this.врачиToolStripMenuItem,
             this.пациентыToolStripMenuItem});
       this.просмотрToolStripMenuItem.Name = "просмотрToolStripMenuItem";
-      this.просмотрToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.просмотрToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.просмотрToolStripMenuItem.Text = "Просмотр";
+      // 
+      // врачиToolStripMenuItem
+      // 
+      this.врачиToolStripMenuItem.Name = "врачиToolStripMenuItem";
+      this.врачиToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+      this.врачиToolStripMenuItem.Text = "Врачи";
+      this.врачиToolStripMenuItem.Click += new System.EventHandler(this.врачиToolStripMenuItem_Click);
+      // 
+      // пациентыToolStripMenuItem
+      // 
+      this.пациентыToolStripMenuItem.Name = "пациентыToolStripMenuItem";
+      this.пациентыToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+      this.пациентыToolStripMenuItem.Text = "Пациенты";
+      this.пациентыToolStripMenuItem.Click += new System.EventHandler(this.пациентыToolStripMenuItem_Click);
       // 
       // экспортToolStripMenuItem1
       // 
@@ -172,7 +185,7 @@
             this.вТекущуюБазуToolStripMenuItem,
             this.вНовуюБазуToolStripMenuItem});
       this.экспортToolStripMenuItem1.Name = "экспортToolStripMenuItem1";
-      this.экспортToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+      this.экспортToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
       this.экспортToolStripMenuItem1.Text = "Экспорт";
       // 
       // вТекущуюБазуToolStripMenuItem
@@ -190,14 +203,13 @@
       // импортToolStripMenuItem1
       // 
       this.импортToolStripMenuItem1.Name = "импортToolStripMenuItem1";
-      this.импортToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+      this.импортToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
       this.импортToolStripMenuItem1.Text = "Импорт";
       // 
       // измеренияToolStripMenuItem
       // 
       this.измеренияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новоеToolStripMenuItem,
-            this.открытьИзБазыToolStripMenuItem});
+            this.новоеToolStripMenuItem});
       this.измеренияToolStripMenuItem.Name = "измеренияToolStripMenuItem";
       this.измеренияToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
       this.измеренияToolStripMenuItem.Text = "Измерения";
@@ -205,15 +217,9 @@
       // новоеToolStripMenuItem
       // 
       this.новоеToolStripMenuItem.Name = "новоеToolStripMenuItem";
-      this.новоеToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+      this.новоеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.новоеToolStripMenuItem.Text = "Новое";
       this.новоеToolStripMenuItem.Click += new System.EventHandler(this.новоеToolStripMenuItem_Click);
-      // 
-      // открытьИзБазыToolStripMenuItem
-      // 
-      this.открытьИзБазыToolStripMenuItem.Name = "открытьИзБазыToolStripMenuItem";
-      this.открытьИзБазыToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-      this.открытьИзБазыToolStripMenuItem.Text = "Открыть из базы";
       // 
       // справкаToolStripMenuItem
       // 
@@ -237,29 +243,16 @@
       this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
       this.справкаToolStripMenuItem1.Text = "Справка";
       // 
-      // врачиToolStripMenuItem
-      // 
-      this.врачиToolStripMenuItem.Name = "врачиToolStripMenuItem";
-      this.врачиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.врачиToolStripMenuItem.Text = "Врачи";
-      this.врачиToolStripMenuItem.Click += new System.EventHandler(this.врачиToolStripMenuItem_Click);
-      // 
-      // пациентыToolStripMenuItem
-      // 
-      this.пациентыToolStripMenuItem.Name = "пациентыToolStripMenuItem";
-      this.пациентыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.пациентыToolStripMenuItem.Text = "Пациенты";
-      this.пациентыToolStripMenuItem.Click += new System.EventHandler(this.пациентыToolStripMenuItem_Click);
-      // 
       // FContainer
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1122, 761);
+      this.ClientSize = new System.Drawing.Size(1122, 733);
       this.Controls.Add(this.MainMenu);
       this.IsMdiContainer = true;
       this.Name = "FContainer";
       this.Text = "Студия импеданса";
+      this.Load += new System.EventHandler(this.FContainer_Load);
       this.MainMenu.ResumeLayout(false);
       this.MainMenu.PerformLayout();
       this.ResumeLayout(false);
@@ -279,7 +272,6 @@
     private System.Windows.Forms.ToolStripMenuItem базаToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem подкючитьToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem новоеToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem открытьИзБазыToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem вТекущуюБазуToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem вНовуюБазуToolStripMenuItem;

@@ -48,5 +48,15 @@ namespace HumanImpedance
       }
     }
 
+    private void DocGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+      {
+        Doctor Doc = Parent.currentDatabase.GetDocList()[e.RowIndex];
+        MessageBox.Show("Врач  " + Doc.FIO + " выбран текущим");
+        Parent.currentDatabase.currentDocID = Doc.id;
+        Parent.HelpForm.Invalidate_Text();
+      }
+    }
+
   }
 }

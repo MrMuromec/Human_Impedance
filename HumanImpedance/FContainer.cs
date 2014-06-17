@@ -16,10 +16,11 @@ namespace HumanImpedance
   {
     public DataContainer currentDatabase = null;
     public string currentDataPath;
-
+    public FHelpForm HelpForm;
     public FContainer()
     {
       InitializeComponent();
+      HelpForm = new FHelpForm(this);
     }
 
     private void CreateMeasureTollStrip_Click(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace HumanImpedance
       FCreateFromFile loader = new FCreateFromFile();
       loader.MdiParent = this;
       loader.Show();
-
+      HelpForm.Invalidate_Text();
     }
 
     private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace HumanImpedance
     {
       FExportForm exportForm = new FExportForm();
       exportForm.ShowDialog();
+      HelpForm.Invalidate_Text();
     }
 
     private void подкючитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace HumanImpedance
           currentDataPath = dialog.FileName;
           break;
       }
+      HelpForm.Invalidate_Text();
     }
 
     private void базуДанныхToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +68,7 @@ namespace HumanImpedance
       dialog.ShowDialog();
       CDataFileInterface.WriteToFile(dialog.FileName, currentDatabase);
       currentDataPath = dialog.FileName;
+      HelpForm.Invalidate_Text();
     }
 
     private void врачаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +81,7 @@ namespace HumanImpedance
       FCreateDoc createDoc = new FCreateDoc();
       createDoc.ShowDialog();
       currentDatabase.AddDoc(createDoc.doctor);
+      HelpForm.Invalidate_Text();
     }
 
     private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,6 +111,7 @@ namespace HumanImpedance
       {
         MessageBox.Show(ex.Message, "ошибка");
       }
+      HelpForm.Invalidate_Text();
     }
 
     private void пациентаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +119,7 @@ namespace HumanImpedance
       FCreatePacient createPac = new FCreatePacient();
       createPac.ShowDialog();
       currentDatabase.AddPacient(createPac.pacient);
+      HelpForm.Invalidate_Text();
     }
 
     private void пациентыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,9 +130,22 @@ namespace HumanImpedance
 
     private void новоеToolStripMenuItem_Click(object sender, EventArgs e)
     {
+      if (currentDatabase.currentDocID < 0 || currentDatabase.currentPacID < 0)
+      {
+        MessageBox.Show("Не выбран врач или пациент, загрузка невозможна");
+        return;
+      }
       FCreateFromFile createMeasure = new FCreateFromFile();
       createMeasure.ShowDialog();
+      createMeasure.measure.PacID = currentDatabase.currentPacID;
+      createMeasure.measure.DocID = currentDatabase.currentDocID;
       currentDatabase.AddMeasure(createMeasure.measure);
+      HelpForm.Invalidate_Text();
+    }
+
+    private void FContainer_Load(object sender, EventArgs e)
+    {
+      HelpForm.Show();
     }
   }
 }

@@ -59,7 +59,31 @@ namespace HumanImpedance
 
     private void PacGrid_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
     {
-      MessageBox.Show(PacGrid.Rows[e.RowIndex].Cells[0].ToString());
+      Pacient pacient = Parent.currentDatabase.GetPacientList()[e.RowIndex];
+      MessageBox.Show("Пациент" + pacient.FIO + "выбран текущим");
+      Parent.currentDatabase.currentPacID = pacient.id;
+      Parent.HelpForm.Invalidate_Text();
+
+      switch (MessageBox.Show("показать анализы пациента?", "вопрос", MessageBoxButtons.YesNo))
+      {
+        case System.Windows.Forms.DialogResult.Yes:
+          //открыть все окошки для измерений с этим пациентом
+          List<Measure> PacientMeasureCollection = new List<Measure>();
+          foreach (Measure measure in localDB.GetMeasureList())
+          {
+            if (measure.PacID == pacient.id)
+              PacientMeasureCollection.Add(measure);
+          }
+          foreach (Measure measure in PacientMeasureCollection)
+          {
+            FShowMeasure ShowMeasure = new FShowMeasure(measure);
+            ShowMeasure.MdiParent = Parent;
+            ShowMeasure.Show();
+          }
+          break;
+        case System.Windows.Forms.DialogResult.No:
+          return;
+      }
     }
   }
 }

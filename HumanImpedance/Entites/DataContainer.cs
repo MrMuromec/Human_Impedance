@@ -27,7 +27,7 @@ namespace HumanImpedance.Entites
       NextFreeDoc = 0;
       NextFreeMeasure = 0;
       NextFreePac = 0;
-      currentDocID = currentPacID = 0;
+      currentDocID = currentPacID = -1;
     }
 
     #region Add Methods

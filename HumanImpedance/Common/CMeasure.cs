@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace HumanImpedance.Common
 {
-    public class CMeasure
+  [Serializable]
+  public class CMeasure
+  {
+    public double Current;
+    public double Voltage;
+    public CMeasure()
     {
-      public double Current;
-      public double Voltage;
-      public CMeasure()
-      {
-        Current = 0;
-        Voltage = 0;
-      }
+      Current = 0;
+      Voltage = 0;
     }
+  }
 }

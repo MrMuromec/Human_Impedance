@@ -44,6 +44,7 @@
       this.DocGrid.Name = "DocGrid";
       this.DocGrid.Size = new System.Drawing.Size(643, 370);
       this.DocGrid.TabIndex = 0;
+      this.DocGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DocGrid_CellMouseDoubleClick);
       // 
       // DocFIO
       // 
