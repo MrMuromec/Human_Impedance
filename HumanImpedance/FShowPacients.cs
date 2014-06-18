@@ -76,7 +76,7 @@ namespace HumanImpedance
           }
           foreach (Measure measure in PacientMeasureCollection)
           {
-            FShowMeasure ShowMeasure = new FShowMeasure(measure);
+            FShowMeasure ShowMeasure = new FShowMeasure(measure, Parent);
             ShowMeasure.MdiParent = Parent;
             ShowMeasure.Show();
           }

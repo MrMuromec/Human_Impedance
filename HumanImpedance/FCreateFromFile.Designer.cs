@@ -34,12 +34,14 @@
       this.PlotPanel = new System.Windows.Forms.PictureBox();
       this.ReadFileButton = new System.Windows.Forms.Button();
       this.SaveButton = new System.Windows.Forms.Button();
+      this.CommentTextBox = new System.Windows.Forms.TextBox();
+      this.label4 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.PlotPanel)).BeginInit();
       this.SuspendLayout();
       // 
       // OpenFileButton
       // 
-      this.OpenFileButton.Location = new System.Drawing.Point(483, 59);
+      this.OpenFileButton.Location = new System.Drawing.Point(483, 10);
       this.OpenFileButton.Name = "OpenFileButton";
       this.OpenFileButton.Size = new System.Drawing.Size(75, 23);
       this.OpenFileButton.TabIndex = 0;
@@ -50,7 +52,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(12, 64);
+      this.label1.Location = new System.Drawing.Point(12, 15);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(74, 13);
       this.label1.TabIndex = 1;
@@ -58,7 +60,7 @@
       // 
       // PathBox
       // 
-      this.PathBox.Location = new System.Drawing.Point(92, 61);
+      this.PathBox.Location = new System.Drawing.Point(92, 12);
       this.PathBox.Name = "PathBox";
       this.PathBox.Size = new System.Drawing.Size(383, 20);
       this.PathBox.TabIndex = 2;
@@ -67,16 +69,16 @@
       // 
       this.PlotPanel.BackColor = System.Drawing.SystemColors.Window;
       this.PlotPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.PlotPanel.Location = new System.Drawing.Point(15, 108);
+      this.PlotPanel.Location = new System.Drawing.Point(12, 195);
       this.PlotPanel.Name = "PlotPanel";
-      this.PlotPanel.Size = new System.Drawing.Size(701, 340);
+      this.PlotPanel.Size = new System.Drawing.Size(701, 353);
       this.PlotPanel.TabIndex = 3;
       this.PlotPanel.TabStop = false;
       this.PlotPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PlotPanel_Paint);
       // 
       // ReadFileButton
       // 
-      this.ReadFileButton.Location = new System.Drawing.Point(564, 59);
+      this.ReadFileButton.Location = new System.Drawing.Point(564, 10);
       this.ReadFileButton.Name = "ReadFileButton";
       this.ReadFileButton.Size = new System.Drawing.Size(75, 23);
       this.ReadFileButton.TabIndex = 4;
@@ -87,7 +89,7 @@
       // SaveButton
       // 
       this.SaveButton.Enabled = false;
-      this.SaveButton.Location = new System.Drawing.Point(645, 59);
+      this.SaveButton.Location = new System.Drawing.Point(645, 10);
       this.SaveButton.Name = "SaveButton";
       this.SaveButton.Size = new System.Drawing.Size(75, 23);
       this.SaveButton.TabIndex = 4;
@@ -95,11 +97,31 @@
       this.SaveButton.UseVisualStyleBackColor = true;
       this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
       // 
+      // CommentTextBox
+      // 
+      this.CommentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.CommentTextBox.Location = new System.Drawing.Point(92, 61);
+      this.CommentTextBox.Multiline = true;
+      this.CommentTextBox.Name = "CommentTextBox";
+      this.CommentTextBox.Size = new System.Drawing.Size(463, 104);
+      this.CommentTextBox.TabIndex = 6;
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(9, 61);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(77, 13);
+      this.label4.TabIndex = 5;
+      this.label4.Text = "Комментарий";
+      // 
       // FCreateFromFile
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(740, 460);
+      this.ClientSize = new System.Drawing.Size(740, 560);
+      this.Controls.Add(this.CommentTextBox);
+      this.Controls.Add(this.label4);
       this.Controls.Add(this.SaveButton);
       this.Controls.Add(this.ReadFileButton);
       this.Controls.Add(this.PlotPanel);
@@ -122,6 +144,8 @@
         private System.Windows.Forms.PictureBox PlotPanel;
         private System.Windows.Forms.Button ReadFileButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox CommentTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }
 

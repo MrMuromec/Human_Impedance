@@ -107,7 +107,7 @@ namespace HumanImpedance
       {
         CDataFileInterface.WriteToFile(currentDataPath, currentDatabase);
       }
-      catch(Exception ex)
+      catch (Exception ex)
       {
         MessageBox.Show(ex.Message, "ошибка");
       }
@@ -146,6 +146,30 @@ namespace HumanImpedance
     private void FContainer_Load(object sender, EventArgs e)
     {
       HelpForm.Show();
+    }
+
+    private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      SaveFileDialog dialog = new SaveFileDialog();
+      dialog.Filter = "Файл Базы Данных Студии (*.cuсf) | *.cucf"; // Creative Universal Compress Format   =)
+
+      HelpForm.Invalidate_Text();
+      switch (dialog.ShowDialog())
+      {
+        case System.Windows.Forms.DialogResult.OK:
+          try
+          {
+            CDataFileInterface.WriteToFile(dialog.FileName, currentDatabase);
+            currentDataPath = dialog.FileName;
+            HelpForm.Invalidate_Text();
+          }
+          catch (Exception ex)
+          {
+            MessageBox.Show(ex.Message, "ошибка");
+          }
+          break;
+      }
+
     }
   }
 }

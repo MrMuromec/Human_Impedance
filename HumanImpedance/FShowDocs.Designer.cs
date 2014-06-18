@@ -30,7 +30,6 @@
     {
       this.DocGrid = new System.Windows.Forms.DataGridView();
       this.DocFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.SetAsCurrent = new System.Windows.Forms.Button();
       this.UpdateButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.DocGrid)).BeginInit();
       this.SuspendLayout();
@@ -42,7 +41,7 @@
             this.DocFIO});
       this.DocGrid.Location = new System.Drawing.Point(12, 12);
       this.DocGrid.Name = "DocGrid";
-      this.DocGrid.Size = new System.Drawing.Size(643, 370);
+      this.DocGrid.Size = new System.Drawing.Size(643, 165);
       this.DocGrid.TabIndex = 0;
       this.DocGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DocGrid_CellMouseDoubleClick);
       // 
@@ -52,18 +51,9 @@
       this.DocFIO.Name = "DocFIO";
       this.DocFIO.Width = 600;
       // 
-      // SetAsCurrent
-      // 
-      this.SetAsCurrent.Location = new System.Drawing.Point(689, 358);
-      this.SetAsCurrent.Name = "SetAsCurrent";
-      this.SetAsCurrent.Size = new System.Drawing.Size(141, 23);
-      this.SetAsCurrent.TabIndex = 1;
-      this.SetAsCurrent.Text = "Выбрать текущим";
-      this.SetAsCurrent.UseVisualStyleBackColor = true;
-      // 
       // UpdateButton
       // 
-      this.UpdateButton.Location = new System.Drawing.Point(689, 329);
+      this.UpdateButton.Location = new System.Drawing.Point(673, 12);
       this.UpdateButton.Name = "UpdateButton";
       this.UpdateButton.Size = new System.Drawing.Size(141, 23);
       this.UpdateButton.TabIndex = 2;
@@ -75,9 +65,8 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(842, 393);
+      this.ClientSize = new System.Drawing.Size(842, 183);
       this.Controls.Add(this.UpdateButton);
-      this.Controls.Add(this.SetAsCurrent);
       this.Controls.Add(this.DocGrid);
       this.Name = "FShowDocs";
       this.Text = "Врачи в базе";
@@ -91,7 +80,6 @@
 
     private System.Windows.Forms.DataGridView DocGrid;
     private System.Windows.Forms.DataGridViewTextBoxColumn DocFIO;
-    private System.Windows.Forms.Button SetAsCurrent;
     private System.Windows.Forms.Button UpdateButton;
   }
 }

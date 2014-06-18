@@ -78,11 +78,7 @@ namespace HumanImpedance
       }
     }
 
-    private void экспортToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      FExportForm exportForm = new FExportForm();
-      exportForm.ShowDialog();
-    }
+
     private void FilterMeasure()
     {
       List<CMeasure> measure2 = new List<CMeasure>();
@@ -222,6 +218,8 @@ namespace HumanImpedance
 
     private void SaveButton_Click(object sender, EventArgs e)
     {
+      measure.Comment = CommentTextBox.Text;
+      measure.date = DateTime.Now;
       this.Close();
     }
   }

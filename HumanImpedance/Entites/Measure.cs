@@ -14,9 +14,11 @@ namespace HumanImpedance.Entites
     public int DocID;
     public int PacID;
 
-    public string FIO;
+    public string Comment;
     public DateTime date;
+
     public List<CMeasure> MeasureList;
+
     public Measure()
     {
       MeasureList = new List<CMeasure>();

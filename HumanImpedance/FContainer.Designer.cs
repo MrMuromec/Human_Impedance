@@ -43,10 +43,6 @@
       this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.врачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.пациентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.экспортToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.вТекущуюБазуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.вНовуюБазуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.импортToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.измеренияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.новоеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +86,7 @@
       this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
       this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
       this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
+      this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
       // 
       // выходToolStripMenuItem
       // 
@@ -103,9 +100,7 @@
       this.базаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.подкючитьToolStripMenuItem,
             this.создатьToolStripMenuItem,
-            this.просмотрToolStripMenuItem,
-            this.экспортToolStripMenuItem1,
-            this.импортToolStripMenuItem1});
+            this.просмотрToolStripMenuItem});
       this.базаToolStripMenuItem.Name = "базаToolStripMenuItem";
       this.базаToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
       this.базаToolStripMenuItem.Text = "База";
@@ -179,33 +174,6 @@
       this.пациентыToolStripMenuItem.Text = "Пациенты";
       this.пациентыToolStripMenuItem.Click += new System.EventHandler(this.пациентыToolStripMenuItem_Click);
       // 
-      // экспортToolStripMenuItem1
-      // 
-      this.экспортToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.вТекущуюБазуToolStripMenuItem,
-            this.вНовуюБазуToolStripMenuItem});
-      this.экспортToolStripMenuItem1.Name = "экспортToolStripMenuItem1";
-      this.экспортToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
-      this.экспортToolStripMenuItem1.Text = "Экспорт";
-      // 
-      // вТекущуюБазуToolStripMenuItem
-      // 
-      this.вТекущуюБазуToolStripMenuItem.Name = "вТекущуюБазуToolStripMenuItem";
-      this.вТекущуюБазуToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-      this.вТекущуюБазуToolStripMenuItem.Text = "В текущую базу";
-      // 
-      // вНовуюБазуToolStripMenuItem
-      // 
-      this.вНовуюБазуToolStripMenuItem.Name = "вНовуюБазуToolStripMenuItem";
-      this.вНовуюБазуToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-      this.вНовуюБазуToolStripMenuItem.Text = "В новую базу";
-      // 
-      // импортToolStripMenuItem1
-      // 
-      this.импортToolStripMenuItem1.Name = "импортToolStripMenuItem1";
-      this.импортToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
-      this.импортToolStripMenuItem1.Text = "Импорт";
-      // 
       // измеренияToolStripMenuItem
       // 
       this.измеренияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -272,10 +240,6 @@
     private System.Windows.Forms.ToolStripMenuItem базаToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem подкючитьToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem новоеToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem1;
-    private System.Windows.Forms.ToolStripMenuItem вТекущуюБазуToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem вНовуюБазуToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem импортToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem просмотрToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;

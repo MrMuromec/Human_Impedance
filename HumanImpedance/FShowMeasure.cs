@@ -17,11 +17,19 @@ namespace HumanImpedance
   {
 
     public Measure measure;
-
-    public FShowMeasure(Measure _measure)
+    private FContainer Parent;
+    public FShowMeasure(Measure _measure, FContainer parent)
     {
       InitializeComponent();
+
       measure = _measure;
+      MdiParent = parent;
+      Parent = parent;
+
+      PacientName.Text = Parent.currentDatabase.GetPacientList().Where(p => p.id == measure.PacID).FirstOrDefault().FIO;
+      DocName.Text = Parent.currentDatabase.GetDocList().Where(d => d.id == measure.DocID).FirstOrDefault().FIO;
+
+      Date.Text = measure.date.ToString();
     }
 
     private void ReadFileButton_Click(object sender, EventArgs e)
