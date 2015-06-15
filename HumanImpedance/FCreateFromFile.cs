@@ -69,12 +69,12 @@ namespace HumanImpedance
           (float)measure.MeasureList[i - 1].Current, 
           (float)(i + 1) / 3, 
           (float)measure.MeasureList[i].Current);
-        e.Graphics.DrawLine(
+        /*e.Graphics.DrawLine(
          pen_2, 
          (float)i / 3,
          (float)measure.MeasureList[i - 1].Voltage,
          (float)(i + 1) / 3,
-         (float)measure.MeasureList[i].Voltage);
+         (float)measure.MeasureList[i].Voltage);*/
       }
     }
 
@@ -84,9 +84,8 @@ namespace HumanImpedance
       List<CMeasure> measure2 = new List<CMeasure>();
       List<CMeasure> measure3 = new List<CMeasure>();
 
-
       double Voltage, Current;
-
+      int c = 260;
 
       /*****************Начало фильтров*****************/
 
@@ -115,6 +114,12 @@ namespace HumanImpedance
         measure3.Add(measureHelp);
       }
 
+      for (int i = 0; i < c; i++)
+      {///////////////////////////////////////////
+        measure3[i].Current = 0;
+        measure3[i].Voltage = 0;
+      }///////////////////////////////////////////
+
       measure2.Clear();
       measure2.Add(new CMeasure());
       measure2.Add(new CMeasure());
@@ -133,6 +138,13 @@ namespace HumanImpedance
 
         measure2.Add(measureHelp);
       }
+
+      for (int i = 0; i < c; i++)
+      {///////////////////////////////////////////
+        measure2[i].Current = 0;
+        measure2[i].Voltage = 0;
+      }///////////////////////////////////////////
+
 
       measure3.Clear();
       measure3.Add(new CMeasure());
@@ -153,6 +165,13 @@ namespace HumanImpedance
         measure3.Add(measureHelp);
       }
 
+      for (int i = 0; i < c; i++)
+      {///////////////////////////////////////////
+        measure3[i].Current = 0;
+        measure3[i].Voltage = 0;
+      }///////////////////////////////////////////
+
+
       measure2.Clear();
       measure2.Add(new CMeasure());
       measure2.Add(new CMeasure());
@@ -172,6 +191,12 @@ namespace HumanImpedance
         measure2.Add(measureHelp);
       }
 
+      for (int i = 0; i < c; i++)
+      {///////////////////////////////////////////
+        measure2[i].Current = 0;
+        measure2[i].Voltage = 0;
+      }///////////////////////////////////////////
+
       measure3.Clear();
       measure3.Add(new CMeasure());
       measure3.Add(new CMeasure());
@@ -190,6 +215,13 @@ namespace HumanImpedance
 
         measure3.Add(measureHelp);
       }
+
+      for (int i = 0; i < c; i++)
+      {///////////////////////////////////////////
+        measure3[i].Current = 0;
+        measure3[i].Voltage = 0;
+      }///////////////////////////////////////////
+
 
       /*****************Фильры кончились*****************/
 
