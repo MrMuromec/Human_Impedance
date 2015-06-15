@@ -30,7 +30,6 @@ namespace HumanImpedance
       DocName.Text = Parent.currentDatabase.GetDocList().Where(d => d.id == measure.DocID).FirstOrDefault().FIO;
 
       Date.Text = measure.date.ToString();
-      DocComment.Text = measure.Comment;
     }
 
     private void ReadFileButton_Click(object sender, EventArgs e)
